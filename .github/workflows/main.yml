@@ -1,0 +1,49 @@
+name: Hospital Workflow
+
+on:
+  push:
+    branches: [ master ]
+
+env:
+  KEY_PEM: ${{ secrets.KEY_PEM }}  
+  PRIVATE KEY: ${{ secrets.PRIVATE_KEY }} 
+  
+jobs:
+
+  deploy:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+       
+     - name: Show files
+       run: ls
+       
+     - name: Delete Files and Stop Service
+       uses: fifsky/ssh-action@master
+       with:
+         command: |
+          pm2 stop hospitalAPI
+          sudo rm -vrf hospitalAPI/*
+         host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
+         user: ubuntu
+         key: ${{ secrets.KEY_PEM }}
+
+     - name: Upload Files
+       uses: siva1024/scp-deployer@latest
+       with:
+         host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
+         username: "ubuntu"
+         key: ${{ secrets.KEY_PEM }}
+         source: "./"
+         target: "hospitalAPI/"
+
+     - name: Install dependencies and start service
+       uses: fifsky/ssh-action@master
+       with:
+         command: |
+          cd front
+          npm install
+          pm2 start hospitalAPI
+         host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
+         user: ubuntu
+         key: ${{ secrets.KEY_PEM }}
