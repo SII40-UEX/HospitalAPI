@@ -29,13 +29,14 @@ jobs:
          key: ${{ secrets.KEY_PEM }}
 
      - name: Upload Files
-       uses: siva1024/scp-deployer@latest
+       uses: betanzos/scp-upload@v1
        with:
          host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
          username: "ubuntu"
          key: ${{ secrets.KEY_PEM }}
          source: "./"
-         target: "hospitalAPI/"
+         remote_dir: "hospitalAPI/"
+         recursive: 'true'
 
      - name: Install dependencies and start service
        uses: fifsky/ssh-action@master
