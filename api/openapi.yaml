@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Distributed Healthcare system - Hospital
+  description: This API allows the doctor to review the patient's history with the
+    collected information and make updates.
+  termsOfService: http://spilab.es/
+  contact:
+    name: Spilab
+    url: http://spilab.es/
+    email: spilab.uex@gmail.com
+  version: "1.0"
+servers:
+- url: https://localhost/
+tags:
+- name: Patient
+paths:
+  /patient/{id}:
+    get:
+      tags:
+      - Patient
+      summary: Gets the history record
+      operationId: getPatient
+      parameters:
+      - name: id
+        in: path
+        description: ID of pet to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: Succesful response
+          content:
+            text/plain:
+              schema:
+                title: Succesful response
+                type: string
+                example: Get Correctly
+                x-content-type: text/plain
+        "404":
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Endpoint or ID not found
+                type: string
+                example: Not found
+                x-content-type: text/plain
+      x-swagger-router-controller: Patient
+    put:
+      tags:
+      - Patient
+      summary: Updates the history record
+      operationId: updatePatient
+      parameters:
+      - name: id
+        in: path
+        description: ID of pet to return
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "201":
+          description: Succesful response
+          content:
+            text/plain:
+              schema:
+                title: Succesful response
+                type: string
+                example: Get Correctly
+                x-content-type: text/plain
+        "404":
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Endpoint or ID not found
+                type: string
+                example: Not found
+                x-content-type: text/plain
+      x-swagger-router-controller: Patient
+components:
+  schemas: {}
+  responses:
+    "200":
+      description: Succesful response
+      content:
+        text/plain:
+          schema:
+            title: Succesful response
+            type: string
+            example: Get Correctly
+            x-content-type: text/plain
+    "201":
+      description: Succesful response
+      content:
+        text/plain:
+          schema:
+            title: Succesful response
+            type: string
+            example: Update Correctly
+    "404":
+      description: Not found response
+      content:
+        text/plain:
+          schema:
+            title: Endpoint or ID not found
+            type: string
+            example: Not found
+            x-content-type: text/plain

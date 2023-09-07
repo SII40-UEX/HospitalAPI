@@ -1,0 +1,20 @@
+{
+  "name": "distributed-healthcare-system-hospital",
+  "version": "1.0",
+  "description": "This API allows the doctor to review the patient's history with the collected information and make updates.",
+  "main": "index.js",
+  "scripts": {
+	"prestart": "npm install",
+	"start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "js-yaml": "^3.3.0",
+    "oas3-tools": "^2.2.3"
+  }
+}
