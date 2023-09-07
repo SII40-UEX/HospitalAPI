@@ -3,7 +3,6 @@ name: Hospital Workflow
 on:
   push:
     branches: [ master ]
-
 env:
   KEY_PEM: ${{ secrets.KEY_PEM }}  
   PRIVATE KEY: ${{ secrets.PRIVATE_KEY }} 
