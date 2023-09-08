@@ -14,7 +14,7 @@ servers:
 tags:
 - name: Patient
 paths:
-  /patient/{id}:
+  /patients/{id}:
     get:
       tags:
       - Patient
