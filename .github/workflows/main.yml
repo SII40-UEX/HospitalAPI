@@ -16,11 +16,11 @@ jobs:
        uses: fifsky/ssh-action@master
        with:
          command: |
-          cd HostpitalAPI
-          sudo pm2 stop HostpitalAPI
+          cd HospitalAPI
+          sudo pm2 stop HospitalAPI
           git pull origin master
           npm install
-          sudo pm2 start HostpitalAPI
+          sudo pm2 start HospitalAPI
          host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
          user: ubuntu
          key: ${{ secrets.KEY_PEM }}
