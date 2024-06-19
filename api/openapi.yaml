@@ -23,7 +23,7 @@ paths:
       parameters:
       - name: id
         in: path
-        description: ID of pet to return
+        description: ID of patient to return
         required: true
         style: simple
         explode: false
