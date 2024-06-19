@@ -1,4 +1,4 @@
-name: WorkFlow Patients Home
+name: WorkFlow Hospital Home
 
 on:
   push:
