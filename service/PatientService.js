@@ -10,7 +10,7 @@
 exports.getPatient = function(id) {
   return new Promise(function(resolve, reject) {
     var examples = {};
-    examples['application/json'] = "Get Correctly";
+    examples['application/json'] = "Get Correctly + id";
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
