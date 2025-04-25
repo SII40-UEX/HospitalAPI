@@ -16,7 +16,7 @@ jobs:
        uses: fifsky/ssh-action@master
        with:
          command: |
-          cd hospitalAPI
+          cd HospitalAPI
           sudo pm2 stop HospitalAPI
           git pull origin master
           npm install
