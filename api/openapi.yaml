@@ -10,7 +10,7 @@ info:
     email: spilab.uex@gmail.com
   version: "1.0"
 servers:
-- url: https://localhost/
+- url: https://ec2-52-211-97-139.eu-west-1.compute.amazonaws.com:8080/
 tags:
 - name: Patient
 paths:
