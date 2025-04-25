@@ -17,10 +17,10 @@ jobs:
        with:
          command: |
           cd HospitalAPI
-          sudo pm2 stop HospitalAPI
+          pm2 stop HospitalAPI
           git pull origin master
           npm install
-          sudo pm2 start HospitalAPI
+          pm2 start HospitalAPI
          host: ec2-54-195-160-5.eu-west-1.compute.amazonaws.com
          user: ubuntu
          key: ${{ secrets.KEY_PEM }}
