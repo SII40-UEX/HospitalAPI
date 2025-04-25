@@ -21,7 +21,7 @@ jobs:
           git pull origin master
           npm install
           sudo pm2 start HospitalAPI
-         host: ec2-34-242-37-222.eu-west-1.compute.amazonaws.com
+         host: ec2-54-195-160-5.eu-west-1.compute.amazonaws.com
          user: ubuntu
          key: ${{ secrets.KEY_PEM }}
 
