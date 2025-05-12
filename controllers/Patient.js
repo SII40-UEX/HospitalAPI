@@ -12,7 +12,7 @@ module.exports.getPatient = function getPatient (req, res, next, id) {
       utils.writeJson(res, response);
     });
 };
-
+// Ejemplo
 module.exports.updatePatient = function updatePatient (req, res, next, id) {
   Patient.updatePatient(id)
     .then(function (response) {
