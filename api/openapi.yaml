@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Distributed Healthcare system - Hospital
+  title: Distributed Healthcare system - Hospital Demo
   description: This API allows the doctor to review the patient's history with the
     collected information and make updates.
   termsOfService: http://spilab.es/
